@@ -4,130 +4,132 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.cardview.widget.CardView
+
+<androidx.cardview.widget.CardView
+    app:cardBackgroundColor="@color/black"
+    app:cardElevation="1dp"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <RelativeLayout
+        android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
-        app:cardBackgroundColor="@color/black"
-        app:cardElevation="@dimen/_1sdp">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:src="" />
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical">
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="PRAGYA 25" />
 
-            <ImageView
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:src="" />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src=""/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="PRAGYA 25"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_20ssp"
-                android:textStyle="bold" />
+    </RelativeLayout>
 
-            <ImageView
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:src="" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="228dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/_16sdp">
+        android:padding="16dp">
 
         <!-- Events Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity=""
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/_8sdp">
+            android:gravity=""
+            android:paddingBottom="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:text="Events"
-                android:textColor="#FFF"
-                android:textSize="@dimen/_18ssp"
-                android:textStyle="bold" />
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:clickable="true"
-                android:focusable="true"
                 android:text="See all"
+                android:textSize="14sp"
                 android:textColor="#FFAA00"
-                android:textSize="@dimen/_14ssp" />
+                android:clickable="true"
+                android:focusable="true" />
         </LinearLayout>
 
         <!-- RecyclerView for Events -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/eventsRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_115sdp"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:clipToPadding="false"
             android:orientation="horizontal"
             android:overScrollMode="ifContentScrolls" />
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="165dp"
+        android:layout_height="160dp"
         android:orientation="vertical"
-        android:padding="@dimen/_16sdp">
+        android:padding="16dp">
 
         <!-- Sponsors Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/_8sdp">
+            android:gravity=""
+            android:paddingBottom="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sponsors"
-                android:textColor="#FFF"
-                android:textSize="@dimen/_18ssp"
-                android:textStyle="bold" />
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
                 android:text="See all"
+                android:textSize="14sp"
                 android:textColor="#FFAA00"
-                android:textSize="@dimen/_14ssp" />
+                android:clickable="true"
+                android:focusable="true" />
         </LinearLayout>
 
-        <!-- RecyclerView for Sponsors -->
+        <!-- RecyclerView for Events -->
         <androidx.recyclerview.widget.RecyclerView
+
             android:id="@+id/sponsorsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="8dp"
             android:clipToPadding="false"
             android:orientation="horizontal"
             android:overScrollMode="ifContentScrolls" />
@@ -135,58 +137,48 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="189dp"
+        android:layout_height="160dp"
         android:orientation="vertical"
-        android:padding="@dimen/_16sdp">
+        android:padding="16dp">
 
-        <!-- About Us Header -->
+        <!-- Sponsors Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/_8sdp">
+            android:gravity=""
+            android:paddingBottom="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="About us"
-                android:textColor="#FFF"
-                android:textSize="@dimen/_18ssp"
-                android:textStyle="bold" />
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
                 android:text="See all"
+                android:textSize="14sp"
                 android:textColor="#FFAA00"
-                android:textSize="@dimen/_14ssp" />
+                android:clickable="true"
+                android:focusable="true" />
         </LinearLayout>
 
-        <!-- RecyclerView for About Us -->
+        <!-- RecyclerView for Events -->
         <androidx.recyclerview.widget.RecyclerView
+
             android:id="@+id/aboutRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="8dp"
             android:clipToPadding="false"
             android:orientation="horizontal"
             android:overScrollMode="ifContentScrolls" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/bottom_navigation"
-            android:layout_alignParentBottom="true"
-            android:background="@color/black"
-            android:elevation="@dimen/_2sdp"
-            app:menu="@menu/bottom_nav_menu"/>
 
-    </RelativeLayout>
 </LinearLayout>
