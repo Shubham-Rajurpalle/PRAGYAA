@@ -38,6 +38,9 @@ android {
 
 dependencies {
 
+    implementation ("com.intuit.ssp:ssp-android:1.0.6")
+    implementation ("com.intuit.sdp:sdp-android:1.0.6")
+    implementation(libs.ssp.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -46,8 +49,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation (libs.blurview)
-    implementation (libs.compose.image.loader)
-
+    implementation("com.eightbitlab:blurview:1.6.6")
+    implementation("io.coil-kt:coil-compose:2.1.1")
+//    implementation (libs.blurview)
+//    implementation (libs.compose.image.loader)
 
 }
