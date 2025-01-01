@@ -1,0 +1,94 @@
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="@dimen/_280sdp"
+    android:layout_height="@dimen/_150sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/event_recycler_cardview"
+    app:cardCornerRadius="@dimen/_23sdp"
+    android:layout_margin="@dimen/_10sdp"
+    android:elevation="@dimen/_8sdp"
+    android:layout_centerHorizontal="true"
+    >
+        <RelativeLayout
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_150sdp">
+        <ImageView
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:id="@+id/event_card_recycler_imageview"
+            android:src="@drawable/image1"
+            android:scaleType="centerCrop"
+            android:layout_centerHorizontal="true"/>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_13sdp"
+                android:elevation="@dimen/_8sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                   >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_event_date_day"
+                        android:text="2"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_18sdp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_marginBottom="-2dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_event_date_month"
+                        android:layout_marginTop="-3dp"
+                        android:text="May"
+                        android:layout_below="@id/tv_event_date_day"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_18sdp"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        />
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_47sdp"
+                android:background="@drawable/overlay_shape"
+                android:layout_alignParentBottom="true"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_tv_event_name"
+                android:text="HackFusion 2.0"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17sdp"
+                android:fontFamily="sans-serif-black"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/_15sdp"
+                />
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>

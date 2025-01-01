@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewEventActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_70sdp"
+        android:scrollbars="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:id="@+id/view_event_card"
+            app:cardCornerRadius="@dimen/_23sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:elevation="@dimen/_8sdp"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/view_event_card_imageview"
+                android:src="@drawable/image1"
+                android:scaleType="centerCrop" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_event_Event_name"
+            android:text="HackFusion"
+            android:textSize="@dimen/_30sdp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_below="@id/view_event_card"
+            android:layout_centerHorizontal="true" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_event_Event_about"
+            android:text="About"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_below="@id/view_event_Event_name"
+            android:layout_centerHorizontal="true" />
+
+
+        <TextView
+            android:id="@+id/event_description"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_event_Event_about"
+            android:layout_margin="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:scrollbars="vertical"
+            android:layout_centerHorizontal="true"
+            android:text="Large description goes here..."
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#070707" />
+
+
+        <Button
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_register_event"
+            android:text="Register"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_below="@id/event_description"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="#03A9F4" />
+    </RelativeLayout>
+</ScrollView>
+    </RelativeLayout>

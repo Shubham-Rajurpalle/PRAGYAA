@@ -8,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.focus.pragyaa"
+        applicationId = "com.pragyaa.focus"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -34,12 +34,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
-    implementation ("com.intuit.ssp:ssp-android:1.0.6")
-    implementation ("com.intuit.sdp:sdp-android:1.0.6")
+    implementation (libs.ssp.android.v106)
+    implementation (libs.sdp.android)
     implementation(libs.ssp.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -49,9 +52,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.eightbitlab:blurview:1.6.6")
-    implementation("io.coil-kt:coil-compose:2.1.1")
-//    implementation (libs.blurview)
-//    implementation (libs.compose.image.loader)
+    implementation(libs.blurview)
+    implementation(libs.coil.compose)
+
 
 }
