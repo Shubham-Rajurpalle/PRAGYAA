@@ -14,6 +14,8 @@ constraintlayout = "2.2.0"
 sdpAndroid = "1.0.6"
 sspAndroid = "1.1.1"
 sspAndroidVersion = "1.0.6"
+googleGmsGoogleServices = "4.4.2"
+firebaseDatabase = "21.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,8 +31,10 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroid" }
 ssp-android = { module = "com.intuit.ssp:ssp-android", version.ref = "sspAndroid" }
 ssp-android-v106 = { module = "com.intuit.ssp:ssp-android", version.ref = "sspAndroidVersion" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 
