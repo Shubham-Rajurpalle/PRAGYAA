@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.focus.pragyaa.databinding.ActivityViewEventBinding
 
-
 class ViewEventDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityViewEventBinding

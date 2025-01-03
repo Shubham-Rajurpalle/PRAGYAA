@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.focus.pragyaa"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.pragyaa.focus"
@@ -52,7 +52,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.blurview)
+    //implementation(libs.blurview)
+    implementation ("com.github.Dimezis:BlurView:version-2.0.4")
     implementation(libs.coil.compose)
 
 
