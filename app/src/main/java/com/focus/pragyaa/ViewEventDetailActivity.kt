@@ -14,7 +14,7 @@ class ViewEventDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+//
 
         binding = ActivityViewEventBinding.inflate(layoutInflater)
         setContentView(binding.root)
