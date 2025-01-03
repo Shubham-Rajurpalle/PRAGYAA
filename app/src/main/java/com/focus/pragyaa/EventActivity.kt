@@ -3,40 +3,35 @@ package com.focus.pragyaa
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.pragyaapp.ViewEventDetailActivity
+
 import com.focus.pragyaa.Utils.EventAdapter
 import com.focus.pragyaa.Utils.EventFirebaseDataClass
-import com.focus.pragyaa.databinding.FragmentEventBinding
+import com.focus.pragyaa.databinding.ActivityEventBinding
 import com.google.firebase.database.*
 
-class EventFragment : Fragment() {
+class EventActivity : AppCompatActivity() {
 
-    private lateinit var binding: FragmentEventBinding
+    private lateinit var binding: ActivityEventBinding
     private lateinit var database: DatabaseReference
     private val eventList = mutableListOf<EventFirebaseDataClass>()
     private lateinit var eventAdapter: EventAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentEventBinding.inflate(inflater, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityEventBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         database = FirebaseDatabase.getInstance().getReference("events")
 
         setupRecyclerView()
-
         fetchEvents()
-
-        return binding.root
     }
 
     private fun setupRecyclerView() {
-        binding.eventRecyclerCardview.layoutManager = LinearLayoutManager(requireContext())
+        binding.eventRecyclerCardview.layoutManager = LinearLayoutManager(this)
         eventAdapter = EventAdapter(eventList) { event ->
             onEventClicked(event)
         }
@@ -61,7 +56,7 @@ class EventFragment : Fragment() {
     }
 
     private fun onEventClicked(event: EventFirebaseDataClass) {
-        val intent = Intent(requireContext(), ViewEventDetailActivity::class.java).apply {
+        val intent = Intent(this, ViewEventDetailActivity::class.java).apply {
             putExtra("eventName", event.eventName)
             putExtra("coverImageUrl", event.coverImageUrl)
             putExtra("eventDateDay", event.eventDateDay)
