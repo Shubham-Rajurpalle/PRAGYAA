@@ -1,43 +1,39 @@
 package com.focus.pragyaa.Utils
 
-import android.content.Intent
+import com.focus.pragyaa.R
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.focus.pragyaa.ViewEventDetailActivity
+import com.bumptech.glide.Glide
 import com.focus.pragyaa.databinding.RecyclerViewCardBinding
 
-class EventAdapter(private val events: List<EventDataClass>) :
-    RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+class EventAdapter(
+    private val events: List<EventFirebaseDataClass>,
+    private val onEventClick: (EventFirebaseDataClass) -> Unit
+) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
-    class EventViewHolder(private val binding: RecyclerViewCardBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val binding = RecyclerViewCardBinding.bind(itemView)
 
-        fun bind(event: EventDataClass) {
-            binding.cardTvEventName.text = event.name
-            binding.eventCardRecyclerImageview.setImageResource(event.imageResId)
-            binding.tvEventDateDay.text = event.day
-            binding.tvEventDateMonth.text = event.month
+        fun bind(event: EventFirebaseDataClass) {
+            binding.cardTvEventName.text = event.eventName
+            binding.tvEventDateDay.text = event.eventDateDay
+            binding.tvEventDateMonth.text = event.eventDateMonth
 
+            Glide.with(binding.eventCardRecyclerImageview.context)
+                .load(event.coverImageUrl)
+                .into(binding.eventCardRecyclerImageview)
 
-            binding.cardTvEventName.setOnClickListener {
-                val context = binding.root.context
-                val intent = Intent(context, ViewEventDetailActivity::class.java).apply {
-                    putExtra("EVENT_NAME", event.name)
-                    putExtra("EVENT_IMAGE", event.imageResId)
-                }
-                context.startActivity(intent)
+            itemView.setOnClickListener {
+                onEventClick(event)
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
-        val binding = RecyclerViewCardBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        )
-        return EventViewHolder(binding)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_card, parent, false)
+        return EventViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
