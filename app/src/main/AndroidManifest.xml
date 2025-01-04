@@ -13,6 +13,12 @@
         android:theme="@style/Theme.PRAGYAA"
         tools:targetApi="31">
         <activity
+            android:name=".ViewEventDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

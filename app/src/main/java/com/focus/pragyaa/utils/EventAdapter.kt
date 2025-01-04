@@ -1,4 +1,4 @@
-package com.focus.pragyaa.Utils
+package com.focus.pragyaa.utils
 
 import com.focus.pragyaa.R
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.focus.pragyaa.Utils.EventFirebaseDataClass
 import com.focus.pragyaa.databinding.RecyclerViewCardBinding
 
 class EventAdapter(

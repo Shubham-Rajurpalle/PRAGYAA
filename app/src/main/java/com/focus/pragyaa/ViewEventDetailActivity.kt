@@ -1,4 +1,4 @@
-package com.example.pragyaapp
+package com.focus.pragyaa
 
 import android.content.Intent
 import android.net.Uri
