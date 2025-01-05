@@ -1,4 +1,4 @@
-package com.focus.pragyaa.utils
+package com.focus.pragyaa.Utils
 
 import com.focus.pragyaa.R
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.focus.pragyaa.Utils.EventFirebaseDataClass
 import com.focus.pragyaa.databinding.RecyclerViewCardBinding
 
 class EventAdapter(
@@ -37,7 +36,7 @@ class EventAdapter(
         return EventViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
+    override fun onBindViewHolder(holder:EventViewHolder, position: Int) {
         holder.bind(events[position])
     }
 

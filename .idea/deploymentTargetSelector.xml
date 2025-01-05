@@ -2,12 +2,12 @@
 <project version="4">
   <component name="deploymentTargetSelector">
     <selectionStates>
-      <SelectionState runConfigName="Pragyaa">
+      <SelectionState runConfigName="Pragyaa 25">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-01-04T06:58:04.985872100Z">
+        <DropdownSelection timestamp="2025-01-05T06:29:05.232007200Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\msi\.android\avd\Pixel_6_Pro_API_34.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Vivek Shahare\.android\avd\Pixel_6a_API_25.avd" />
             </handle>
           </Target>
         </DropdownSelection>

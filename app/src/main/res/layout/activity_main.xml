@@ -192,13 +192,15 @@
                         android:layout_height="wrap_content"
                         android:clickable="true"
                         android:focusable="true"
+                        android:id="@+id/sponsername"
                         android:text="See all"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_12ssp"
                         android:padding="@dimen/_4sdp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent" />
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:onClick="onSeeAllClicked"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -208,7 +210,9 @@
                     android:layout_weight="1"
                     android:layout_marginTop="@dimen/_4sdp"
                     android:clipToPadding="false"
-                    android:paddingHorizontal="@dimen/_4sdp" />
+                    android:paddingHorizontal="@dimen/_4sdp"
+
+                    />
             </LinearLayout>
 
             <!-- About Us Section -->

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.focus.pragyaa.Utils.EventFirebaseDataClass
 import com.focus.pragyaa.databinding.ActivityEventBinding
-import com.focus.pragyaa.utils.EventAdapter
+import com.focus.pragyaa.Utils.EventAdapter
 import com.google.firebase.database.*
 
 

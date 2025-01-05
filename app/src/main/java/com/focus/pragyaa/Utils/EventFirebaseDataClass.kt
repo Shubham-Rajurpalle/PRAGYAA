@@ -1,4 +1,5 @@
 package com.focus.pragyaa.Utils
+
 data class EventFirebaseDataClass(
     val eventName: String = "",
     val coverImageUrl: String = "",
