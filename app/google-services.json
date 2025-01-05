@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1724744462",
+    "project_id": "pragyaa-74e33",
+    "storage_bucket": "pragyaa-74e33.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1724744462:android:8c69e5a10901ceb4564d5f",
+        "android_client_info": {
+          "package_name": "com.pragyaa.focus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDACli11Y_32OzyEN4dYtdzk6lpO0ma0H0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
