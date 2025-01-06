@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.pragyaa.focus" />
+                  <option name="mobileSdkAppId" value="1:1724744462:android:8c69e5a10901ceb4564d5f" />
+                  <option name="projectId" value="pragyaa-74e33" />
+                  <option name="projectNumber" value="1724744462" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

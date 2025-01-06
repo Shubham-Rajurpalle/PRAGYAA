@@ -31,11 +31,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         database = FirebaseDatabase.getInstance().getReference("events")
-
         // Set up the event recycler view
         setupRecyclerView()
-        fetchEvents()
         setupSponsorsRecyclerView()
+        fetchEvents()
+
 
 
         // Horizontal event RecyclerView setup
@@ -99,21 +99,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupSponsorsRecyclerView() {
         // Create sponsor list
-        val sponsorList = listOf(
-            Sponsor(R.drawable.image1),
-            Sponsor(R.drawable.image2)
-        )
+        val arr=ArrayList<Sponsor>();
+        arr.add(Sponsor(R.drawable.image1));
+        arr.add(Sponsor(R.drawable.image2));
+        arr.add(Sponsor(R.drawable.image1));
 
-        val sponsorAdapter = SponsorAdapter(sponsorList)
-
-        binding.sponsorsRecyclerView.apply {
-            layoutManager = LinearLayoutManager(
-                this@MainActivity,
-                LinearLayoutManager.HORIZONTAL,
-                false
-            )
-            adapter = sponsorAdapter
-        }
+        sponsorList = arr
+        sponsorAdapter = SponsorAdapter(sponsorList)
+        binding.sponsorsRecyclerView.adapter = sponsorAdapter
     }
 
 }

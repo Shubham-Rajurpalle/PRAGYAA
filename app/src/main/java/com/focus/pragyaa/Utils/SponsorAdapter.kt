@@ -4,18 +4,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.focus.pragyaa.Utils.Sponsor
 import com.focus.pragyaa.databinding.SponsorItemLayoutBinding
 
-class SponsorAdapter(sponsorList: List<Sponsor>) : RecyclerView.Adapter<SponsorAdapter.SponsorViewHolder>() {
-
-    private var sponsorList = ArrayList<Sponsor>()
+class SponsorAdapter(private val sponsorList: List<Sponsor>) :
+    RecyclerView.Adapter<SponsorAdapter.SponsorViewHolder>() {
 
     inner class SponsorViewHolder(private val binding: SponsorItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(sponsor: Sponsor) {
-            binding.eventCardRecyclerImageview.setImageResource(sponsor.imageurl)
+            binding.sponsorCardRecyclerImageview.setImageResource(sponsor.imageurl)
 
-            // Optional: Add click listener for the card
-            binding.eventRecyclerCardview.setOnClickListener {
+            binding.sponsorRecyclerCardview.setOnClickListener {
                 // Handle click event
             }
         }
@@ -33,10 +31,4 @@ class SponsorAdapter(sponsorList: List<Sponsor>) : RecyclerView.Adapter<SponsorA
     }
 
     override fun getItemCount(): Int = sponsorList.size
-
-    fun updateList(newList: ArrayList<Sponsor>) {
-        sponsorList = newList
-        notifyDataSetChanged()
-    }
 }
-

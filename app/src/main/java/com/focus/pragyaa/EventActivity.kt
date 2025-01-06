@@ -30,11 +30,11 @@ class EventActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        binding.eventRecyclerCardview.layoutManager = LinearLayoutManager(this)
+        binding.sponsorRecyclerCardview.layoutManager = LinearLayoutManager(this)
         eventAdapter = EventAdapter(eventList) { event ->
             onEventClicked(event)
         }
-        binding.eventRecyclerCardview.adapter = eventAdapter
+        binding.sponsorRecyclerCardview.adapter = eventAdapter
     }
 
     private fun fetchEvents() {

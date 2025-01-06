@@ -21,9 +21,9 @@ class EventAdapter(
             binding.tvEventDateDay.text = event.eventDateDay
             binding.tvEventDateMonth.text = event.eventDateMonth
 
-            Glide.with(binding.eventCardRecyclerImageview.context)
+            Glide.with(binding.sponsorRecyclerCardview.context)
                 .load(event.coverImageUrl)
-                .into(binding.eventCardRecyclerImageview)
+                .into(binding.sponsorCardRecyclerImageview)
 
             itemView.setOnClickListener {
                 onEventClick(event)
