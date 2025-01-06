@@ -35,6 +35,7 @@
 
             <!-- Head Text -->
             <TextView
+                android:id="@+id/textview1"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:text="@string/pragya_head"
@@ -46,6 +47,7 @@
 
             <!-- Subtitle Text -->
             <TextView
+                android:id="@+id/textview2"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:text="@string/nobita_nobi"

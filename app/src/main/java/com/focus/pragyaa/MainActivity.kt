@@ -10,6 +10,8 @@ import com.focus.pragyaa.Utils.EventFirebaseDataClass
 import com.focus.pragyaa.databinding.ActivityMainBinding
 import com.focus.pragyaa.Utils.EventAdapter
 import SponsorAdapter
+import com.focus.pragyaa.Utils.About
+import com.focus.pragyaa.Utils.AboutAdapter
 
 import com.focus.pragyaa.Utils.Sponsor
 import com.google.firebase.database.*
@@ -23,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var eventAdapter: EventAdapter
     private lateinit var sponsorAdapter: SponsorAdapter
     private lateinit var sponsorList: ArrayList<Sponsor>
+    private lateinit var aboutList:ArrayList<About>
+    private  lateinit var aboutAdapter: AboutAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         setupRecyclerView()
         setupSponsorsRecyclerView()
         fetchEvents()
+        setupAboutRecyclerView()
 
 
 
@@ -57,6 +62,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.aboutRecyclerView.layoutManager =
+            LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        binding.aboutRecyclerView.adapter = aboutAdapter
+
+        binding.viewAllAbout.setOnClickListener{
+            val intent = Intent(this,AboutActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
@@ -107,6 +120,21 @@ class MainActivity : AppCompatActivity() {
         sponsorList = arr
         sponsorAdapter = SponsorAdapter(sponsorList)
         binding.sponsorsRecyclerView.adapter = sponsorAdapter
+    }
+
+    private fun setupAboutRecyclerView(){
+
+        val arr=ArrayList<About>();
+        arr.add(About(R.drawable.nobita,"Nobita","Head"))
+        arr.add(About(R.drawable.nobita,"Nobita","Head"))
+        arr.add(About(R.drawable.nobita,"Nobita","Head"))
+        arr.add(About(R.drawable.nobita,"Nobita","Head"))
+        arr.add(About(R.drawable.nobita,"Nobita","Head"))
+        arr.add(About(R.drawable.nobita,"Nobita","Head"))
+
+        aboutList = arr
+        aboutAdapter = AboutAdapter(aboutList)
+        binding.aboutRecyclerView.adapter = aboutAdapter
     }
 
 }
