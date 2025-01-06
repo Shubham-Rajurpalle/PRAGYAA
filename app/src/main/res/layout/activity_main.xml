@@ -192,7 +192,7 @@
                         android:layout_height="wrap_content"
                         android:clickable="true"
                         android:focusable="true"
-                        android:id="@+id/sponsername"
+                        android:id="@+id/view_all_sponsor"
                         android:text="See all"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_12ssp"

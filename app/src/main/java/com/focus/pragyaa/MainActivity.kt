@@ -1,27 +1,29 @@
 package com.focus.pragyaa
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.focus.pragyaa.Utils.EventFirebaseDataClass
 import com.focus.pragyaa.databinding.ActivityMainBinding
 import com.focus.pragyaa.Utils.EventAdapter
+import SponsorAdapter
+
 import com.focus.pragyaa.Utils.Sponsor
-import com.focus.pragyaa.Utils.SponsorAdapter
-//import com.focus.pragyaa.adapters.SponsorAdapter
 import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var database: DatabaseReference
     private val eventList = mutableListOf<EventFirebaseDataClass>()
     private lateinit var eventAdapter: EventAdapter
-    private val sponsorlist:ArrayList<Sponsor> = ArrayList()
     private lateinit var sponsorAdapter: SponsorAdapter
+    private lateinit var sponsorList: ArrayList<Sponsor>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +34,9 @@ class MainActivity : AppCompatActivity() {
 
         // Set up the event recycler view
         setupRecyclerView()
-        setupRecyclerView1()
-
-        // Fetch data
-        fetchsponsordata()
         fetchEvents()
+        setupSponsorsRecyclerView()
+
 
         // Horizontal event RecyclerView setup
         binding.activityMainEventHorizontalRecyclerview.layoutManager =
@@ -47,26 +47,24 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, EventActivity::class.java)
             startActivity(intent)
         }
+
+        binding.sponsorsRecyclerView.layoutManager =
+            LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        binding.sponsorsRecyclerView.adapter = sponsorAdapter
+
+        binding.viewAllSponsor.setOnClickListener{
+            val intent = Intent(this,SponsorListActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
-    // Handle the 'See All' button for Sponsors visibility toggle
-    private fun toggleSponsorRecyclerViewVisibility() {
-        if (binding.sponsorsRecyclerView.visibility == View.VISIBLE) {
-            binding.sponsorsRecyclerView.visibility = View.GONE
-        } else {
-            binding.sponsorsRecyclerView.visibility = View.VISIBLE
-        }
-    }
 
     private fun setupRecyclerView() {
         eventAdapter = EventAdapter(eventList) { event -> onEventClicked(event) }
         binding.activityMainEventHorizontalRecyclerview.adapter = eventAdapter
     }
-    private fun setupRecyclerView1(){
-        binding.sponsorsRecyclerView.layoutManager = LinearLayoutManager(this)
-        sponsorAdapter = SponsorAdapter(sponsorlist){ sponsor -> onSponsorClicked(sponsor) }
-        binding.sponsorsRecyclerView.adapter = sponsorAdapter
-    }
+
 
     private fun fetchEvents() {
         database.addValueEventListener(object : ValueEventListener {
@@ -84,11 +82,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-    private fun fetchsponsordata(){
-        sponsorlist.add(Sponsor(R.drawable.image1))
-        sponsorlist.add(Sponsor(R.drawable.image1))
-        sponsorlist.add(Sponsor(R.drawable.image1))
-    }
+
+
 
     private fun onEventClicked(event: EventFirebaseDataClass) {
         val intent = Intent(applicationContext, ViewEventDetailActivity::class.java).apply {
@@ -102,12 +97,23 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun onSponsorClicked(sponsor: Sponsor) {
+    private fun setupSponsorsRecyclerView() {
+        // Create sponsor list
+        val sponsorList = listOf(
+            Sponsor(R.drawable.image1),
+            Sponsor(R.drawable.image2)
+        )
 
-        val intent = Intent(this, ViewSponsorDetailActivity::class.java).apply {
-            putExtra("imageResource", sponsor.image)
+        val sponsorAdapter = SponsorAdapter(sponsorList)
+
+        binding.sponsorsRecyclerView.apply {
+            layoutManager = LinearLayoutManager(
+                this@MainActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
+            adapter = sponsorAdapter
         }
-        startActivity(intent)
     }
 
 }

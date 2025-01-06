@@ -18,9 +18,7 @@
         <activity
             android:name=".EventActivity"
             android:exported="false" />
-        <activity android:name=".SponsorActivity"
-            android:exported="false"/>
-        <activity android:name=".ViewSponsorDetailActivity"
+        <activity android:name=".SponsorListActivity"
             android:exported="false"/>
         <activity
             android:name=".MainActivity"

@@ -1,8 +1,8 @@
-<com.google.android.material.card.MaterialCardView android:layout_width="@dimen/_280sdp"
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="@dimen/_280sdp"
     android:layout_height="@dimen/_150sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/event_recycler_cardview"
     app:cardCornerRadius="@dimen/_23sdp"
     android:layout_margin="@dimen/_10sdp"
@@ -15,13 +15,11 @@
 
         <ImageView
             android:layout_width="@dimen/_280sdp"
-            android:layout_height="@dimen/_110sdp"
-            android:id="@+id/sponsor_card_recycler_imageview"
+            android:layout_height="@dimen/_150sdp"
+            android:id="@+id/event_card_recycler_imageview"
             android:src="@drawable/image1"
             android:scaleType="centerCrop"
-            android:layout_centerHorizontal="true"
-            android:contentDescription="@android:string/cancel"/>
-
+            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>

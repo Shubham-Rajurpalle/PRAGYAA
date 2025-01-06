@@ -1,40 +1,42 @@
-package com.focus.pragyaa.Utils
-
-import com.focus.pragyaa.R
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.focus.pragyaa.Utils.Sponsor
 import com.focus.pragyaa.databinding.SponsorItemLayoutBinding
 
-class SponsorAdapter(
-    private val sponsors: ArrayList<Sponsor>,
-    private val onSponsorClick: (Sponsor) -> Unit
-) : RecyclerView.Adapter<SponsorAdapter.SponsorViewHolder>() {
+class SponsorAdapter(sponsorList: List<Sponsor>) : RecyclerView.Adapter<SponsorAdapter.SponsorViewHolder>() {
 
-    inner class SponsorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val binding = SponsorItemLayoutBinding.bind(itemView)
+    private var sponsorList = ArrayList<Sponsor>()
+
+    inner class SponsorViewHolder(private val binding: SponsorItemLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(sponsor: Sponsor) {
-            Glide.with(binding.sponsorCardRecyclerImageview.context)
-                .load(sponsor.image)
-                .into(binding.sponsorCardRecyclerImageview)
+            binding.eventCardRecyclerImageview.setImageResource(sponsor.imageurl)
 
-            itemView.setOnClickListener {
-                onSponsorClick(sponsor)
+            // Optional: Add click listener for the card
+            binding.eventRecyclerCardview.setOnClickListener {
+                // Handle click event
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SponsorViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.sponsor_item_layout, parent, false)
-        return SponsorViewHolder(view)
+        val binding = SponsorItemLayoutBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false
+        )
+        return SponsorViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: SponsorViewHolder, position: Int) {
-        holder.bind(sponsors[position])
+        holder.bind(sponsorList[position])
     }
 
-    override fun getItemCount(): Int = sponsors.size
+    override fun getItemCount(): Int = sponsorList.size
+
+    fun updateList(newList: ArrayList<Sponsor>) {
+        sponsorList = newList
+        notifyDataSetChanged()
+    }
 }
+
