@@ -27,4 +27,5 @@ class AboutActivity:AppCompatActivity() {
             LinearLayoutManager.VERTICAL,false)
         binding.aboutRecyclerCardview.adapter = aboutAdapter
     }
+    // jccucuedc
 }
